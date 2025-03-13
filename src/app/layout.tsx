@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from './providers';
 
 // Metadata remains the same
 export const metadata: Metadata = {
   title: "Godly Wisdom",
-  description: "Rediscover the Joy of the Open Road",
+  description: "Impacting Lives for Significance",
 };
 
 export default function RootLayout({
@@ -16,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="font-tahoma antialiased">
-        <Providers>
+        <main>
           {children}
-        </Providers>
+        </main>
       </body>
     </html>
   );

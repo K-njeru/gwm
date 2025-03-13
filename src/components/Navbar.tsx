@@ -5,7 +5,6 @@ import { Menu, X, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import ThemeSwitch from "./ThemeSwitch"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -75,7 +74,6 @@ export default function Navbar() {
 
           {/* Get Started and Dark Mode Toggle */}
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
-            <ThemeSwitch />
             <Link href="/Donate" className="rounded-md bg-blue-700 px-4 py-2 text-white text-sm font-semibold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500">
               Donate
             </Link>
@@ -137,11 +135,6 @@ export default function Navbar() {
                 Donate <ArrowRight className="h-4 ml-2" />
               </Link>
             </div>
-          </div>
-
-          {/* Bottom Section */}
-          <div className="relative w-full flex items-end justify-end">
-            <ThemeSwitch />
           </div>
         </motion.div>
       )}
