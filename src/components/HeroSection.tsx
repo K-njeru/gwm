@@ -17,19 +17,19 @@ const SLIDES = [
     cta: "Donate",
   },
   {
-    image: "/empower.jpg",
+    image: "/economic.jpg",
     title: "Economic Empowerment",
     intro: "Cultivating profitable stewards by developing God-given talents and resources.",
     cta: "Donate",
   },
   {
-    image: "/leader.jpg",
+    image: "/church.jpg",
     title: "Equipping Ministry Leaders",
     intro: "Strengthening church workers with skills in organization and governance.",
     cta: "Donate",
   },
   {
-    image: "/child.jpg",
+    image: "/Discipleship.jpg",
     title: "Discipleship",
     intro: "Equipping disciples to fulfill the Great Commission with Christ-centered partners.",
     cta: "",
