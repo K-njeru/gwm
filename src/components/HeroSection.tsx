@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Calendar, MapPin } from "lucide-react";
+import { ChevronLeft, ChevronRight} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -41,33 +41,7 @@ const fadeInVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
-const ConferenceBanner = () => (
-  <motion.div
-    variants={fadeInVariants}
-    initial="hidden"
-    animate="visible"
-    className={`bg-gradient-to-r from-${BLUE_SHADE} to-blue-800 text-white p-3 rounded-lg mb-6 md:mb-8`}
-  >
-    <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-      <div className="flex items-center space-x-3">
-        <Calendar className="h-4 w-4 text-blue-200" />
-        <div>
-          <p className="text-sm font-medium text-blue-100">Transforming Faith Conference 2025</p>
-        </div>
-        <div className="hidden sm:flex items-center space-x-2">
-          <MapPin className="h-4 w-4 text-blue-200" />
-          <span className="text-sm text-blue-100">Nairobi, Kenya</span>
-        </div>
-      </div>
-      <Link
-        href="#Conference"
-        className="px-4 py-1 bg-white text-blue-600 rounded-full text-sm font-semibold hover:bg-blue-50 transition-colors scroll-smooth"
-      >
-        Learn More
-      </Link>
-    </div>
-  </motion.div>
-);
+
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -133,26 +107,21 @@ export default function Home() {
           {/* Left Side: Static Content */}
           <div className="w-full md:w-1/2 flex flex-col justify-center">
             <div className="max-w-xl">
-              <ConferenceBanner />
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
-                Godly Wisdom Ministry
-              </h1>
-              <p className="text-base md:text-lg text-white mb-8">
-                Growing in faith, talent, and service through Christ-centered education
-              </p>
+              
             </div>
           </div>
 
           {/* Right Side: Program Box */}
           <div className="w-full md:w-1/2 flex justify-end">
-            <div className={`max-w-md w-full p-6 border-2 border-${BLUE_SHADE} bg-white/90 rounded-lg shadow-lg`}>
-              <h2 className={`text-2xl font-bold text-${BLUE_SHADE} mb-3`}>
+            <div className={`max-w-md w-full flex flex-col items-center justify-center p-6 border-2 border-blue-600 rounded-lg shadow-lg`}>
+              <p className="text-sm text-white mb-4">GODLY WISDOM MINISTRY</p>
+              <h2 className={`text-5xl font-bold text-white font-garamond mb-3`}>
                 {SLIDES[currentSlide].title}
               </h2>
-              <p className="text-lg text-gray-700 mb-6">{SLIDES[currentSlide].intro}</p>
+              <p className="text-sm italic text-white mb-6">{SLIDES[currentSlide].intro}</p>
               <Link
                 href="#Programs"
-                className={`inline-flex items-center justify-center px-4 py-2 bg-${BLUE_SHADE} text-white rounded-md font-semibold hover:bg-blue-700 transition-colors scroll-smooth`}
+                className={`w-fit inline-flex items-center justify-center px-4 py-2 bg-${BLUE_SHADE} text-white rounded-md font-semibold hover:bg-blue-700 transition-colors scroll-smooth`}
               >
                 Learn More
               </Link>
