@@ -76,10 +76,14 @@ export default function Navbar() {
           <div className="hidden lg:flex lg:gap-x-12">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
-                <Link
+               <Link
                   href={item.href}
                   className={`text-base font-medium ${
-                    activeSection === item.href.substring(1) ? "text-blue-500" : "text-gray-900 hover:text-blue-700"
+                    activeSection === item.href.substring(1)
+                      ? "text-blue-500"
+                      : scrolled
+                      ? "text-foreground" // Change to your desired text color on scroll
+                      : "text-white" // White text when background is transparent
                   }`}
                 >
                   {item.name}

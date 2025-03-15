@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight} from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react"; // Import ChevronDown
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -40,8 +40,6 @@ const fadeInVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
-
-
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -102,18 +100,16 @@ export default function Home() {
           initial="hidden"
           animate="visible"
           variants={fadeInVariants}
-          className="relative z-10 min-h-[95vh] flex flex-col md:flex-row items-center justify-between p-6 md:p-12"
+          className="relative z-10 min-h-[95vh] flex flex-col md:flex-row items-center justify-center p-6 md:p-12"
         >
-          {/* Left Side: Static Content */}
-          <div className="w-full md:w-1/2 flex flex-col justify-center">
-            <div className="max-w-xl">
-              
-            </div>
-          </div>
+          {/* Left Side: Empty Space (for medium screens and above) */}
+          <div className="hidden md:block md:w-1/2"></div>
 
           {/* Right Side: Program Box */}
-          <div className="w-full md:w-1/2 flex justify-end">
-            <div className={`max-w-md w-full flex flex-col items-center justify-center p-6 border-2 border-blue-600 rounded-lg shadow-lg`}>
+          <div className="w-full md:w-1/2 flex justify-center">
+            <div
+              className={`max-w-md w-full flex flex-col items-center justify-center p-6 border-2 border-${BLUE_SHADE} rounded-lg shadow-lg`}
+            >
               <p className="text-sm text-white mb-6">GODLY WISDOM MINISTRY</p>
               <h2 className={`text-5xl font-bold text-white mb-3`}>
                 {SLIDES[currentSlide].title}
@@ -130,32 +126,59 @@ export default function Home() {
         </motion.div>
 
         {/* Navigation Arrows */}
+        {/* Left Arrow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="absolute bottom-6 left-6 z-20 flex items-center gap-4"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20"
         >
           <button
             onClick={() => {
               previousSlide();
               setAutoplay(false);
             }}
-            className={`p-2 rounded-full bg-white/10 backdrop-blur-sm border border-${BLUE_SHADE} text-${BLUE_SHADE} hover:bg-${BLUE_SHADE} hover:text-white transition-colors`}
+            className={`p-2 rounded-full bg-white/10 backdrop-blur-sm border border-${BLUE_SHADE} text-white hover:bg-${BLUE_SHADE} hover:text-white transition-colors`}
             aria-label="Previous slide"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
+        </motion.div>
+
+        {/* Right Arrow */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20"
+        >
           <button
             onClick={() => {
               nextSlide();
               setAutoplay(false);
             }}
-            className={`p-2 rounded-full bg-white/10 backdrop-blur-sm border border-${BLUE_SHADE} text-${BLUE_SHADE} hover:bg-${BLUE_SHADE} hover:text-white transition-colors`}
+            className={`p-2 rounded-full bg-white/10 backdrop-blur-sm border border-${BLUE_SHADE} text-white hover:bg-${BLUE_SHADE} hover:text-white transition-colors`}
             aria-label="Next slide"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
+        </motion.div>
+
+        {/* Animated Arrow Down */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        >
+          <Link href="#Programs" className="flex items-center justify-center">
+            <motion.div
+              animate={{ y: [0, 10, 0] }} // Bounce animation
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ChevronDown className="h-8 w-8 text-white" />
+            </motion.div>
+          </Link>
         </motion.div>
       </section>
     </main>
