@@ -114,11 +114,11 @@ export default function Home() {
           {/* Right Side: Program Box */}
           <div className="w-full md:w-1/2 flex justify-end">
             <div className={`max-w-md w-full flex flex-col items-center justify-center p-6 border-2 border-blue-600 rounded-lg shadow-lg`}>
-              <p className="text-sm text-white mb-4">GODLY WISDOM MINISTRY</p>
-              <h2 className={`text-5xl font-bold text-white font-garamond mb-3`}>
+              <p className="text-sm text-white mb-6">GODLY WISDOM MINISTRY</p>
+              <h2 className={`text-5xl font-bold text-white mb-3`}>
                 {SLIDES[currentSlide].title}
               </h2>
-              <p className="text-sm italic text-white mb-6">{SLIDES[currentSlide].intro}</p>
+              <p className="text-base italic tracking-[.04em] text-white mb-6">{SLIDES[currentSlide].intro}</p>
               <Link
                 href="#Programs"
                 className={`w-fit inline-flex items-center justify-center px-4 py-2 bg-${BLUE_SHADE} text-white rounded-md font-semibold hover:bg-blue-700 transition-colors scroll-smooth`}
