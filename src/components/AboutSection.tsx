@@ -7,7 +7,7 @@ function App() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
             <Image
-                    src="/church.jpg"
+                    src="/morocco.png"
                     alt="Background pattern"
                     layout="fill" // Fill the parent container
                     objectFit="cover" // Ensure the image covers the area without distortion
