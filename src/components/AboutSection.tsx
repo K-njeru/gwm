@@ -1,91 +1,120 @@
-"use client"
+import React from 'react';
+import Image from 'next/image';
 
-import { Leaf, BookOpen, HeartHandshake, HandHeart } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight } from 'lucide-react'
-import { motion } from 'framer-motion';
+function App() {
+  return (
+    <section className="relative py-16 min-h-screen">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/weather.png"
+          alt="Background pattern"
+          width={48}
+          height={48}
+          className="w-full h-full object-cover opacity-15"
+        />
+      </div>
 
-const values = [
-    {
-        icon: HandHeart, // Represents serving others with love
-        title: "Servant Leadership",
-        description:
-            "Inspired by Christ's example, we equip believers to lead by serving others with humility and love, reflecting the heart of a true disciple.",
-        color: "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400",
-    },
-    {
-        icon: HeartHandshake, // Represents compassion and connection
-        title: "Compassion",
-        description:
-            "We nurture a culture of compassion, teaching believers to love and care for others as Christ did, bringing hope and healing to a broken world.",
-        color: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400",
-    },
-    {
-        icon: Leaf, // Represents humility and growth
-        title: "Humility",
-        description:
-            "We emphasize the importance of humility, encouraging believers to live with a Christ-like attitude of meekness and dependence on God.",
-        color: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400",
-    },
-    {
-        icon: BookOpen, // Represents truth and integrity
-        title: "Truthfulness",
-        description:
-            "We uphold the value of truthfulness, guiding believers to live with integrity and honesty, rooted in the unchanging truth of God's Word.",
-        color: "bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-400",
-    },
-];
-export default function AboutSection() {
-    return (
-        <section className="w-full py-12 md:py-24 bg-gray-50/50 dark:bg-[hsl(220_56%_15%)] transition-colors" id="About">
-            <div className="container px-4 md:px-6">
-                <div className="flex flex-col gap-4">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">Our Values</h2>
-                    <p className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-xl">
-                        Godly Wisdom exists to equip and disciple believers of Jesus Christ in their faith and knowledge of the truth that leads to godliness.
-                    </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                    <div className="lg:col-span-2 space-y-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {values.map((item, index) => (
-                            <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group flex flex-col gap-2 p-6 bg-white dark:bg-[hsl(220_56%_17%)] rounded-xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-lg"
-                        >
-                            <div className={`p-2 w-12 h-12 ${item.color} rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 duration-300`}>
-                                <item.icon className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{item.title}</h3>
-                            <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
-                        </motion.div>
-                            ))}
-                        </div>
-                        <div className="flex justify-start">
-                            <Link
-                                href="/about"
-                                className="w-full flex items-center justify-center rounded-md bg-blue-700 px-6 py-3 text-md text-white font-bold hover:bg-transparent hover:text-foreground hover:border hover:border-blue-500"
-                            >
-                                Learn More About Our Mission <ArrowRight className="ml-4"></ArrowRight>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="relative aspect-square md:aspect-auto md:h-full rounded-lg overflow-hidden">
-                        <Image
-                            alt="Students engaged in learning"
-                            className="object-cover"
-                            fill
-                            src="/scriptures.jpg?height=800&width=600"
-                            priority
-                        />
-                    </div>
-                </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-5xl font-bold text-center mb-16 text-blue-600">
+          Our Journey of Faith & Wisdom
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Vision Statement Card */}
+          <div className="transform hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-xl md:mt-12">
+            <h3 className="text-3xl font-bold mb-6 leading-tight">
+              Christ, the Wisdom of God
+              <span className="block mt-2 text-blue-200">
+                – our true North, guiding every step we take and shaping every life we touch.
+              </span>
+            </h3>
+            <div className="w-16 h-1 bg-amber-400 rounded-full mb-6"></div>
+          </div>
+
+            {/* Card 2 */}
+            <div className="relative flex flex-col justify-between items-baseline rounded-2xl p-8 shadow-lg text-white max-h-fit md:mt-20 md:-mb-8">
+            <Image
+              src="/church.jpg" // Place in public/ or use an external URL
+              alt="Church background"
+              fill
+              className="rounded-2xl object-cover"
+              quality={75}
+            />
+           <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent rounded-2xl"></div>
+            <div className="relative z-10 h-full flex justify-end">
+              <p className="mb-0 h-full">
+                Godly wisdom isn&apos;t just taught here—it&apos;s lived, shared,
+                and multiplied through real lives with real impact.
+              </p>
             </div>
-        </section>
-    )
+          </div>
+
+          {/* Community Card */}
+            {/* Card 3 */}
+            <div className="relative flex flex-col justify-between rounded-2xl p-8 shadow-lg text-white">
+            <Image
+              src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2070"
+              alt="Community background"
+              fill
+              className="absolute inset-0 w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
+              quality={75}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent rounded-2xl"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Our Community</h3>
+              <p className="text-blue-50 mb-6">
+                Join a thriving community of believers who support and uplift each other in faith and wisdom.
+              </p>
+              <button className="px-6 py-3 bg-amber-400 text-blue-900 font-semibold rounded-lg hover:bg-amber-300 transition-colors duration-300 transform hover:scale-105">
+                Join Us Today
+              </button>
+            </div>
+          </div>
+
+          {/* About Card */}
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl flex flex-col justify-between hover:shadow-2xl transition-shadow duration-300 md:mt-12">
+            <div>
+              <div className="w-16 h-1 bg-blue-600 rounded-full mb-6"></div>
+              <p className="text-gray-700 leading-relaxed">
+                We are a discipleship-driven Christian ministry based in Nairobi, walking
+                alongside believers on their journey to spiritual maturity and Kingdom impact.
+                Since 2013, we&apos;ve been nurturing fruitfulness through Scripture-based teachings,
+                economic empowerment, and leadership development.
+              </p>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                Inspired by Titus 1:1 and the call to godliness, we help believers live wisely,
+                lead humbly, and serve passionately.
+              </p>
+            </div>
+            <div className="mt-6 flex justify-end">
+              <span className="text-sm text-blue-600 font-semibold">Est. 2013</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="text-4xl font-bold text-blue-600 mb-2">10+</div>
+            <div className="text-gray-600">Years of Ministry</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
+            <div className="text-gray-600">Lives Impacted</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
+            <div className="text-gray-600">Community Programs</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-bold text-blue-600 mb-2">12</div>
+            <div className="text-gray-600">Ministry Leaders</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
+export default App;

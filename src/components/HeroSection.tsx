@@ -108,7 +108,7 @@ export default function Home() {
           {/* Right Side: Program Box */}
           <div className="w-full md:w-1/2 flex justify-center">
             <div
-              className={`max-w-md w-full flex flex-col items-center justify-center p-6 border-2 border-${BLUE_SHADE} rounded-lg shadow-lg`}
+              className={`max-w-md w-full flex flex-col items-center justify-center p-6 border-2 border-blue-600 rounded-lg shadow-lg`}
             >
               <p className="text-sm text-white mb-6">GODLY WISDOM MINISTRY</p>
               <h2 className={`text-5xl font-bold text-white mb-3`}>
