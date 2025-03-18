@@ -5,9 +5,9 @@ import { MoveUpRight } from 'lucide-react';
 
 function App() {
     return (
-        <section className="relative py-16 min-h-screen bg-gradient-to-r from-blue-50 via-white to-blue-50 ">
+        <section className="relative py-16 min-h-screen bg-neutral-200 ">
             <svg
-                className="absolute top-0 left-0 right-0 w-full text-white"
+                className="absolute top-0 left-0 right-0 w-full text-blue-50"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1440 640"
                 preserveAspectRatio="none"
@@ -109,25 +109,6 @@ function App() {
                     </div>
                 </div>
 
-                {/* Stats Section */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
-                    <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">10+</div>
-                        <div className="text-gray-600">Years of Ministry</div>
-                    </div>
-                    <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
-                        <div className="text-gray-600">Lives Impacted</div>
-                    </div>
-                    <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-                        <div className="text-gray-600">Community Programs</div>
-                    </div>
-                    <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">12</div>
-                        <div className="text-gray-600">Ministry Leaders</div>
-                    </div>
-                </div>
             </div>
         </section>
     );
