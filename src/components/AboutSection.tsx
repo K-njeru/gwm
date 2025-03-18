@@ -1,25 +1,28 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { MoveUpRight } from 'lucide-react';
 
 function App() {
     return (
-        <section className="relative py-16 min-h-screen">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-            <Image
-                    src="/morocco.png"
-                    alt="Background pattern"
-                    layout="fill" // Fill the parent container
-                    objectFit="cover" // Ensure the image covers the area without distortion
-                    className="opacity-15" // Adjust opacity as needed
-                    priority // Load the image with high priority
-                />
-            </div>
-
+        <section className="relative py-16 min-h-screen bg-gradient-to-r from-blue-50 via-white to-blue-50 ">
+            <svg
+                className="absolute top-0 left-0 right-0 w-full text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1440 640"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                <path
+                    fill="currentColor"
+                    d="M0,640L48,608C96,576,192,512,288,480C384,448,480,448,576,426.7C672,405,768,363,864,362.7C960,363,1056,405,1152,416C1248,427,1344,405,1392,394.7L1440,384L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+                ></path>
+            </svg>
             <div className="container mx-auto px-4 relative z-10">
-                <h2 className="text-5xl font-bold text-center mb-16 text-blue-600">
-                    Our Journey of Faith & Wisdom
+                <h2 className="text-5xl font-bold text-center mb-8 text-gray-700 ">
+                    Our Kingdom Assignment
                 </h2>
+                <div className="w-64 h-1 bg-blue-600 rounded-full mb-6 mx-auto"></div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     {/* Vision Statement Card */}
@@ -31,7 +34,7 @@ function App() {
                                 – our true North, guiding every step we take and shaping every life we touch.
                             </span>
                         </h3>
-                        <div className="w-16 h-1 bg-amber-400 rounded-full mb-6"></div>
+                        <div className="w-16 h-1 bg-white rounded-full mb-6"></div>
                     </div>
 
                     {/* Card 2 */}
@@ -66,11 +69,16 @@ function App() {
                         <div className="absolute bottom-0 left-0 right-0 p-8">
                             <h3 className="text-2xl font-bold text-white mb-4">Our Community</h3>
                             <p className="text-blue-50 mb-6">
-                                Join a thriving community of believers who support and uplift each other in faith and wisdom.
+                                Discover the heart of Godly Wisdom Ministry—where faith grows, lives are discipled, and Christ remains our true North.
                             </p>
-                            <button className="px-6 py-3 bg-amber-400 text-blue-900 font-semibold rounded-lg hover:bg-amber-300 transition-colors duration-300 transform hover:scale-105">
-                                Join Us Today
-                            </button>
+                            <Link
+                                className=" px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-transparent hover:text-blue-500 hover:border-2 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                                href="/about"
+                            >
+                                <span>Learn More About Us</span>
+                                <MoveUpRight className="w-5 h-5" />
+                            </Link>
+
                         </div>
                     </div>
 
