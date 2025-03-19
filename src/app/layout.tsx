@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
-// Load the Manrope font
+// Load the Urbanist font
 const urbanist = Urbanist({
   subsets: ['latin'], // Specify the subset(s) you need
   weight: ['400', '500', '600', '700'], // Specify the weights you need
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${urbanist.variable} font-sans`}>
       <body className="font-tahoma antialiased">
         <main>
+          <SmoothScroll />
           {children}
         </main>
       </body>

@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const programs = [
   {
@@ -31,18 +33,34 @@ const programs = [
 ];
 
 const Programs = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
   return (
-    <div className="relative py-12">
-      {/* Blue Background for Top Half */}
+    <section id="programs" className="relative py-12">
+      {/* Background */}
       <div className="absolute inset-0 bg-stone-200 h-1/2 z-0"></div>
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <h2 className="text-5xl font-bold text-center mb-8 text-gray-700">Ministry Through His Design</h2>
         <div className="w-64 h-1 bg-blue-600 rounded-full mb-6 mx-auto"></div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* Program Cards */}
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {programs.map((program, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <motion.div
+            key={index}
+            initial={{ opacity: 0, y: -50 }} // ⬆️ from the top
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            exit={{ opacity: 0, y: -50 }} // ⬆️ back to top on exit (optional)
+            transition={{
+              duration: 0.7,
+              delay: index * 0.2,
+              ease: 'easeInOut', // Smooth entry and exit
+            }}
+              className="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-lg"
+            >
               <div className="h-48 relative">
                 <Image
                   src={program.image}
@@ -59,11 +77,11 @@ const Programs = () => {
                   Learn More →
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
