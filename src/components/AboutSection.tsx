@@ -68,7 +68,7 @@ function App() {
 
           {/* Card 2 */}
           <motion.div variants={cardVariants}
-            className="transform hover:scale-105 transition-transform duration-300 relative flex flex-col justify-between items-baseline rounded-2xl p-8 shadow-lg text-white max-h-fit md:mt-20 md:-mb-8">
+            className="transform hover:scale-105 transition-transform duration-300 relative flex flex-col justify-between items-baseline rounded-2xl p-8 shadow-lg text-white md:mt-20 md:-mb-8">
               <Image
                 src="/church.jpg"
                 alt="Church background"
