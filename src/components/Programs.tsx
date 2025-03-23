@@ -20,7 +20,7 @@ const programs = [
   },
   {
     title: 'Discipleship',
-    image: '/discipleship.jpg',
+    image: '/Discipleship.jpg',
     description: 'Raising committed followers of Christ through study, mentorship, and practical faith.',
     link: '/programs/discipleship',
   },
