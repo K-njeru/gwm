@@ -50,24 +50,23 @@ const Programs = () => {
         <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {programs.map((program, index) => (
             <motion.div
-            key={index}
-            initial={{ opacity: 0, y: -50 }} // ⬆️ from the top
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            exit={{ opacity: 0, y: -50 }} // ⬆️ back to top on exit (optional)
-            transition={{
-              duration: 0.7,
-              delay: index * 0.2,
-              ease: 'easeInOut', // Smooth entry and exit
-            }}
+              key={index}
+              initial={{ opacity: 0, y: -50 }} // ⬆️ from the top
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              exit={{ opacity: 0, y: -50 }} // ⬆️ back to top on exit (optional)
+              transition={{
+                duration: 0.7,
+                delay: index * 0.2,
+                ease: 'easeInOut', // Smooth entry and exit
+              }}
               className="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-lg"
             >
               <div className="h-48 relative">
                 <Image
                   src={program.image}
                   alt={program.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-xl"
+                  fill 
+                  className="rounded-t-xl object-cover" 
                 />
               </div>
               <div className="p-4">

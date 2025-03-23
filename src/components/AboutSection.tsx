@@ -56,7 +56,7 @@ function App() {
         >
           {/* Card 1 */}
           <motion.div variants={cardVariants}
-            className="transform hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-xl md:mt-12">
+            className="h-[300px] sm:h-auto transform hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white shadow-xl md:mt-12">
               <h3 className="text-3xl font-bold mb-6 leading-tight">
                 Christ, the Wisdom of God
                 <span className="block mt-2 text-blue-200">
@@ -68,7 +68,7 @@ function App() {
 
           {/* Card 2 */}
           <motion.div variants={cardVariants}
-            className="transform hover:scale-105 transition-transform duration-300 relative flex flex-col justify-between items-baseline rounded-2xl p-8 shadow-lg text-white md:mt-20 md:-mb-8">
+            className="h-[300px] sm:h-auto transform hover:scale-105 transition-transform duration-300 relative flex flex-col justify-between items-baseline rounded-2xl p-8 shadow-lg text-white md:mt-20 md:-mb-8">
               <Image
                 src="/church.jpg"
                 alt="Church background"
@@ -86,7 +86,7 @@ function App() {
 
           {/* Card 3 */}
           <motion.div variants={cardVariants}
-             className="transform hover:scale-105 transition-transform duration-300 relative flex flex-col justify-between rounded-2xl p-8 shadow-lg text-white">
+             className="h-[300px] sm:h-auto transform hover:scale-105 transition-transform duration-300 relative flex flex-col justify-between rounded-2xl p-8 shadow-lg text-white">
               <Image
                 src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2070"
                 alt="Community background"
@@ -112,7 +112,7 @@ function App() {
 
           {/* Card 4 */}
           <motion.div variants={cardVariants}
-             className="relative transform hover:scale-105 transition-transform duration-300 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 md:mt-12 overflow-hidden">
+             className="h-[330px] sm:h-auto relative transform hover:scale-105 transition-transform duration-300 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 md:mt-12 overflow-hidden">
               <div className="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
               <div className="relative z-10 flex flex-col justify-between h-full">
                 <div>
