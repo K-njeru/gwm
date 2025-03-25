@@ -74,7 +74,7 @@ export default function Navbar() {
       <div
         className={`fixed top-0 left-0 right-0 z-50 bg-blue-600 hidden md:block transition-colors duration-300`}
       >
-        <div className="mx-auto max-w-7xl flex items-center justify-end p-1 lg:px-8"> {/* Reduced padding */}
+        <div className="mx-auto max-w-7xl flex items-center justify-end p-1 lg:px-8"> 
           <div className="flex gap-2">
             {socialLinks.map((social) => (
               <Link
